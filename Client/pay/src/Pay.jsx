@@ -1,7 +1,16 @@
 import React from 'react'
 import './Pay.css'
+import axios from 'axios'
 
 export const Pay = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const data = {
+      phone: e.target.phone.value,
+      amount: e.target.amount.value
+    }
+    axios.post('http://localhost:3000/pay', data)
+  }
   return (
     <div className='container'>
         <div>
@@ -9,9 +18,9 @@ export const Pay = () => {
         </div>
 
         <div>
-            <form action="" method="post">
-                <input type="text" placeholder='Phone Number' />
-                <input type="number" name="Amout" placeholder='Amount' />
+            <form onSubmit={handleSubmit}>
+                <input type="number" name="phone" placeholder='Phone Number' />
+                <input type="number" name="amount" placeholder='Amount' />
                 <button type="submit">Pay</button>
             </form>
         </div>
