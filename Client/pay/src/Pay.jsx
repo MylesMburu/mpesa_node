@@ -3,14 +3,24 @@ import './Pay.css'
 import axios from 'axios'
 
 export const Pay = () => {
+
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = {
       phone: e.target.phone.value,
       amount: e.target.amount.value
     }
-    axios.post('http://localhost:3000/pay', data)
+    console.log(data)
+    axios.post('http://localhost:8000/pay', data)
+    .then(res => {
+      console.log(res)
+    })
+    .catch((err) => {
+      console.log(err) 
+      console.log('Could not send data to server')
+    } );
   }
+  
   return (
     <div className='container'>
         <div>
