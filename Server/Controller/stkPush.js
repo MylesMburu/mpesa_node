@@ -35,7 +35,6 @@ const getToken = async(res,req,next) => {
 }
 
   const stkpush = async (req, res) => {
-    const token = await getToken(); // call the getToken function
     const shortCode = '174379';
     const phoneNumber = req.body.phone.substring(1);
     const amount = req.body.amount;
@@ -52,14 +51,14 @@ const getToken = async(res,req,next) => {
         'PartyA': `254${phoneNumber}`,
         'PartyB': shortCode,
         'PhoneNumber': `254${phoneNumber}`,
-        'CallBackURL': 'https://webhook.site/9d0b2f7a-9c7a-4c7a-8c0a-9b0a9b0a9b0a',
+        'CallBackURL': 'https://b42b-196-200-34-192.ngrok-free.app/pay',
         'AccountReference': 'test',
         'TransactionDesc': 'test'
     }
 
     await axios.post(url, data, {       
         headers: {
-            authorization: `Bearer ${token}`
+            authorization: `Bearer ${token}` // use the token from the getToken() response
     }
   }).then(
         (data)=>{
