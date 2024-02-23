@@ -58,7 +58,7 @@ const getToken = async(res,req,next) => {
 
     await axios.post(url, data, {       
         headers: {
-            authorization: `Bearer ${token}` // use the token from the getToken() response
+            authorization: `Bearer ${token}` 
     }
   }).then(
         (data)=>{

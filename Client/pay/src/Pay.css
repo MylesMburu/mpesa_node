@@ -17,6 +17,13 @@ body{
     justify-content: center;
     align-items: center;
 }
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+}
 form{
     display: flex;
     flex-direction: column;
@@ -27,4 +34,9 @@ form input{
 }
 button{
     padding: var(--padding-x) var(--padding-y);
+}
+a{
+    color: #fff;
+    text-decoration: none;
+    font-size: x-large;
 }

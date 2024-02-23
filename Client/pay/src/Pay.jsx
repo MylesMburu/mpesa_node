@@ -1,6 +1,7 @@
 import React from 'react'
 import './Pay.css'
 import axios from 'axios'
+import { FaGithub } from "react-icons/fa";
 
 export const Pay = () => {
 
@@ -23,8 +24,9 @@ export const Pay = () => {
   
   return (
     <div className='container'>
-        <div>
-            <h1>Pay With Mpesa</h1>
+        <div className='header'>
+            <h1>Pay With Mpesa </h1>
+            <a href="https://github.com/MylesMburu/mpesa_node" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
         </div>
 
         <div>
