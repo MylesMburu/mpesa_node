@@ -51,7 +51,7 @@ const getToken = async(res,req,next) => {
         'PartyA': `254${phoneNumber}`,
         'PartyB': shortCode,
         'PhoneNumber': `254${phoneNumber}`,
-        'CallBackURL': 'https://b42b-196-200-34-192.ngrok-free.app/pay',
+        'CallBackURL': 'https://ab37-41-212-65-18.ngrok.io/pay',
         'AccountReference': 'test',
         'TransactionDesc': 'test'
     }
